@@ -5,12 +5,11 @@ import responses
 from matchpredictor.app import create_app
 from test.test_builders import build_app_environment
 
-
 class TestModelsApi(TestCase):
     @responses.activate
     def setUp(self) -> None:
         super().setUp()
-
+        self.maxDiff = None  # Allow unlimited diff output
         responses.add(
             method='GET',
             url='https://example.com/some.csv',
@@ -35,5 +34,7 @@ class TestModelsApi(TestCase):
             {"name": "Offense simulator", "predicts_in_progress": True},
             {"name": "Full simulator (fast)", "predicts_in_progress": True},
             {"name": "Full simulator", "predicts_in_progress": True},
+            {"name": "Alphabetical", "predicts_in_progress": False},
+            {"name": "Poisson", "predicts_in_progress": False},
             # {"name": "Linear regression", "predicts_in_progress": False},
         ]})

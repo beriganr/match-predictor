@@ -3,8 +3,8 @@ from typing import List, Tuple, Optional, cast
 import numpy as np
 from numpy import float64
 from numpy.typing import NDArray
-from sklearn.linear_model import PoissonRegressor
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.linear_model import PoissonRegressor # type: ignore
+from sklearn.preprocessing import OneHotEncoder # type: ignore
 
 from matchpredictor.matchresults.result import Fixture, Outcome, Result, Team
 from matchpredictor.predictors.predictor import Predictor, Prediction

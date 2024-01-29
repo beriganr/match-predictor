@@ -9,4 +9,3 @@ class AlphabeticalPredictor(Predictor):
             return Prediction(outcome=Outcome.AWAY)
         else:
             return Prediction(outcome=Outcome.HOME)
-        #return Prediction(outcome=Outcome.HOME)
